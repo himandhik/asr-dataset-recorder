@@ -334,7 +334,8 @@ function wireRecordingCard(u: Utterance) {
         recordBtn.innerHTML = squareIcon();
         recordHint.textContent = "Recording… tap to stop";
       } catch (err) {
-        showFatalBanner("Microphone access denied or unavailable.");
+        const reason = err instanceof Error ? `${err.name}: ${err.message}` : String(err);
+        showFatalBanner(`Microphone access denied or unavailable. (${reason})`);
       }
     } else if (recordingState === "recording") {
       const { blob, mimeType } = await recorder.stop();
