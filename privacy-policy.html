@@ -1,0 +1,171 @@
+<title>Recorder Privacy Notice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf9f5;
+    --surface:#ffffff;
+    --text:#20242c;
+    --muted:#5b6472;
+    --border:#e4e1d8;
+    --accent:#4a4fd1;
+    --accent-soft:#eef0fb;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#14161c;
+      --surface:#1b1e26;
+      --text:#e7e8ec;
+      --muted:#9aa1b0;
+      --border:#2c303a;
+      --accent:#8b90ff;
+      --accent-soft:#242849;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#14161c;
+    --surface:#1b1e26;
+    --text:#e7e8ec;
+    --muted:#9aa1b0;
+    --border:#2c303a;
+    --accent:#8b90ff;
+    --accent-soft:#242849;
+    color-scheme: dark;
+  }
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    line-height:1.65;
+  }
+  .wrap{
+    max-width:700px;
+    margin:0 auto;
+    padding-inline:24px;
+    padding-block:56px 80px;
+  }
+  header{
+    margin-bottom:40px;
+    padding-bottom:28px;
+    border-bottom:1px solid var(--border);
+  }
+  .eyebrow{
+    font-size:0.78rem;
+    letter-spacing:0.09em;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+    margin:0 0 10px;
+  }
+  h1{
+    font-family:"Source Serif 4", Georgia, serif;
+    font-weight:600;
+    font-size:clamp(1.9rem, 4.5vw, 2.5rem);
+    line-height:1.15;
+    text-wrap:balance;
+    margin:0 0 12px;
+  }
+  .meta{
+    color:var(--muted);
+    font-size:0.92rem;
+    margin:0;
+  }
+  h2{
+    font-family:"Source Serif 4", Georgia, serif;
+    font-weight:600;
+    font-size:1.3rem;
+    margin:40px 0 12px;
+  }
+  p{ margin:0 0 14px; max-width:64ch; }
+  ul{ margin:0 0 14px; padding-left:1.3em; }
+  li{ margin-bottom:8px; max-width:60ch; }
+  strong{ font-weight:600; }
+  .card{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:18px 20px;
+    margin:0 0 14px;
+  }
+  .contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 24px;
+    background:var(--accent-soft);
+    border-radius:10px;
+    padding:18px 20px;
+    margin-top:8px;
+  }
+  .contact div{ min-width:180px; }
+  .contact .label{
+    font-size:0.76rem;
+    text-transform:uppercase;
+    letter-spacing:0.07em;
+    color:var(--muted);
+    margin-bottom:3px;
+  }
+  .contact .value{ font-weight:500; }
+  footer{
+    margin-top:48px;
+    padding-top:20px;
+    border-top:1px solid var(--border);
+    color:var(--muted);
+    font-size:0.85rem;
+  }
+  a{ color:var(--accent); }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Sinhala ASR Voice Recorder</p>
+    <h1>Privacy Notice</h1>
+    <p class="meta">Last updated September 23, 2026</p>
+  </header>
+
+  <p>This app is a small internal tool used to collect spoken-audio recordings for a Sinhala automatic speech recognition (ASR) research dataset. It is operated by a single individual (the "operator") for academic data-collection purposes — not a commercial product.</p>
+
+  <h2>What is collected</h2>
+  <ul>
+    <li><strong>Audio recordings.</strong> When a contributor records a spoken utterance in the browser, that audio is converted to a mono FLAC file and uploaded to the operator's Google Drive.</li>
+    <li><strong>Display name.</strong> Contributors pick their name from a fixed list before recording, so their files and progress can be tracked.</li>
+    <li><strong>Recording status.</strong> Which utterances have been recorded, and a link to each file, are written to a Google Sheet used to track dataset progress.</li>
+  </ul>
+  <p>No account creation, email address, location, or device data is collected. Contributors never sign in with Google — only the operator does, once, to authorize the app's own access to their Drive folder.</p>
+
+  <h2>How it's stored and who can access it</h2>
+  <div class="card">
+    <p style="margin-bottom:0">Recordings and tracking data are stored entirely in the operator's own Google Drive and Google Sheets, inside a folder and sheet the operator owns and controls. They are not stored on any other server, sold, or shared with third parties. Access is limited to the operator and anyone they explicitly grant access to on that Drive folder.</p>
+  </div>
+
+  <h2>Google API scopes used</h2>
+  <p>The app's server uses:</p>
+  <ul>
+    <li>The <strong>Google Sheets API</strong>, via a service account, to read assigned utterances and write recording status.</li>
+    <li>The <strong>Google Drive API</strong>, via OAuth authorized by the operator only, to upload audio files into the operator's own Drive folder.</li>
+  </ul>
+  <p>This OAuth authorization is performed once by the operator and is never requested from contributors.</p>
+
+  <h2>Data retention and deletion</h2>
+  <p>Recordings and tracking rows are kept for as long as the research project needs them. The operator can delete any file from Drive or any row from the Sheet at any time. Contributors may ask the operator to remove their recordings by contacting them directly.</p>
+
+  <h2>Contact</h2>
+  <div class="contact">
+    <div>
+      <div class="label">Operator</div>
+      <div class="value">Himandhi Kuruppu</div>
+    </div>
+    <div>
+      <div class="label">Email</div>
+      <div class="value">himandhikuruppu@gmail.com</div>
+    </div>
+  </div>
+
+  <footer>
+    This notice covers the ASR Voice Recorder app only and may be updated as the project evolves.
+  </footer>
+</div>
